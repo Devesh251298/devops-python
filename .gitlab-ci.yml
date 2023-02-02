@@ -5,6 +5,7 @@ stages:
 test-code-job:
   stage: test
   script:
+    - pip install -r requirements.txt
     - pytest
 
 deploy-code-job:
@@ -12,7 +13,6 @@ deploy-code-job:
   script:
     - python3 -m venv venv
     - . venv/bin/activate
-    - pip install -r requirements.txt
     - export PORT=5000
     - gunicorn --config gunicorn_config.py wsgi:app
 
