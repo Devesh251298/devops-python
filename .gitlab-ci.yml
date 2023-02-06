@@ -16,4 +16,11 @@ deploy-code-job:
     - export PORT=5000
     - gunicorn --config gunicorn_config.py wsgi:app
 
+deploy-code-job1:
+  stage: deploy
+  script:
+    - dpl --provider=heroku --app=jd22@ic.ac.uk-simplewebapp --api-key=97f2319f-2aa2-47d1-87a9-1935d1b4a2a3
+
+
+
   
