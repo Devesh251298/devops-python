@@ -5,14 +5,13 @@ RUN apt-get install -y python3 python3-pip python3-dev build-essential python3.1
 
 WORKDIR /app
 
-ENTRYPOINT [ "python3" ]
-
-RUN python3 -m venv venv1
-RUN . venv1/bin/activate
+ENV VIRTUAL_ENV=/opt/venv
+RUN python3 -m venv $VIRTUAL_ENV
+ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 COPY . .
 RUN pip3 install -r requirements.txt
-ENV PORT = 5000
+ENV PORT = 8080
 CMD ["gunicorn","--config", "gunicorn_config.py", "wsgi:app"]
-EXPOSE 5000
+EXPOSE 8080
 
