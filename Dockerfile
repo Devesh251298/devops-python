@@ -16,6 +16,6 @@ RUN pip3 install -r requirements.txt
 COPY . .
 
 ENV PORT = 5000
-RUN ['gunicorn','--config', 'gunicorn_config.py', 'wsgi:app']
+CMD ["gunicorn","--config", "gunicorn_config.py", "wsgi:app"]
 EXPOSE 5000
 
