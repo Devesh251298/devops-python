@@ -1,13 +1,15 @@
 FROM ubuntu:latest
 
 RUN apt-get update -y
-RUN apt-get install -y python3 python3-pip python3-dev build-essential python3.10-venv pandoc
+RUN apt-get install -y python3 python3-pip python3-dev build-essential python3.10-venv 
 
 WORKDIR /app
 
 ENV VIRTUAL_ENV=/opt/venv
 RUN python3 -m venv $VIRTUAL_ENV
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
+
+RUN pip3 install pandoc 
 
 COPY . .
 RUN pip3 install -r requirements.txt
