@@ -9,6 +9,9 @@ ENV VIRTUAL_ENV=/opt/venv
 RUN python3 -m venv $VIRTUAL_ENV
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
+RUN apt-get install -y pandoc
+RUN apt-get install -y texlive-xetex
+
 COPY . .
 RUN pip3 install -r requirements.txt
 ENV PORT = 8080
