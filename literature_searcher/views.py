@@ -17,12 +17,12 @@ def index():
 
 
 # COMMENT-OUT FOR STAGE 3 ------------------------------------
-@bp.route("/search_results", methods=["GET", "POST"])
-def process_query():
-    if query := request.form["search_query"]:
-        search_results = query_processor.process(query)
-        return render_template("search_results.html", search_results=search_results)
-    abort(400, "You did not enter a query")
+# @bp.route("/search_results", methods=["GET", "POST"])
+# def process_query():
+#     if query := request.form["search_query"]:
+#         search_results = query_processor.process(query)
+#         return render_template("search_results.html", search_results=search_results)
+#     abort(400, "You did not enter a query")
 
 
 # ------------------------------------------------------------
