@@ -19,7 +19,7 @@ deploy-code-job:
 deploy-code-job1:
   stage: deploy
   script:
-    - dpl --provider=heroku --app=simplewebapp1 --api-key=97f2319f-2aa2-47d1-87a9-1935d1b4a2a3
+    - dpl --provider=heroku --app=simplewebapp1 --api-key=396bb04a-af67-46d7-a21f-e016b4df537a
 
 
 
