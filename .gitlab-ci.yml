@@ -1,5 +1,6 @@
 stages:
   - test
+  - build
   - deploy
 
 test-code-job:
@@ -9,7 +10,7 @@ test-code-job:
     - python3 -m pytest
 
 deploy-code-job:
-  stage: deploy
+  stage: build
   script:
     - python3 -m venv venv
     - . venv/bin/activate
