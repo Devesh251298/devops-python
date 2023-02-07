@@ -3,6 +3,7 @@ FROM ubuntu:latest
 RUN apt-get update -y
 RUN apt-get install -y python3 python3-pip python3-dev build-essential python3.10-venv
 
+COPY . /
 WORKDIR /
 
 ENTRYPOINT [ "python3" ]
