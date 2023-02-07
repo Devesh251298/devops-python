@@ -8,7 +8,7 @@ WORKDIR /literature_searcher
 
 ENTRYPOINT [ "python3" ]
 
-RUN python -m venv venv1
+RUN python3 -m venv venv1
 RUN . venv1/bin/activate
 
 RUN pip3 install -r requirements.txt
