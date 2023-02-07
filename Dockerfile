@@ -1,7 +1,8 @@
 FROM ubuntu:latest
 
 RUN apt-get update -y
-RUN apt-get install -y python3 python3-pip python3-dev build-essential
+RUN apt-get install -y python3 python3-pip python3-dev build-essential 
+RUN apt install python3.10-venv
 
 COPY . /literature_searcher
 WORKDIR /literature_searcher
