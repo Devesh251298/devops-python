@@ -9,15 +9,15 @@ test-code-job:
     - pip install -r requirements.txt
     - python3 -m pytest
 
-deploy-code-job:
+build-code-job:
   stage: build
   script:
     - python3 -m venv venv
     - . venv/bin/activate
     - export PORT=5000
-    - nohup gunicorn --config gunicorn_config.py wsgi:app --daemon
+    - (nohup gunicorn --config gunicorn_config.py wsgi:app > log.txt 2 > log.txt &);
 
-deploy-code-job1:
+deploy-code-job:
   stage: deploy
   script:
     - dpl --provider=heroku --app=simplewebapp1 --api-key=396bb04a-af67-46d7-a21f-e016b4df537a
