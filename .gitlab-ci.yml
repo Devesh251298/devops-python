@@ -15,7 +15,7 @@ build-code-job:
     - python3 -m venv venv
     - . venv/bin/activate
     - export PORT=5000
-    - (nohup gunicorn --config gunicorn_config.py wsgi:app > log.txt 2 > log.txt &);
+    - (nohup gunicorn --config gunicorn_config.py wsgi:app > log.txt 2> log.txt &);
 
 deploy-code-job:
   stage: deploy
