@@ -14,14 +14,14 @@ def test_knows_about_asimov():
 def test_not_case_sensitive():
     assert any("playwright" in result for result in process("shakespeare"))
 
-def test_knows_about_kia():
-    assert any("Kia" in result for result in process("Kia"))
-
-def test_knows_about_toyota():
-    assert any("Toyota" in result for result in process("Toyota"))
-
 def test_knows_about_ford():
-    assert any("Ford" in result for result in process("Ford"))
+    assert any("automaker" in result for result in process("Ford"))
 
 def test_knows_about_tesla():
-    assert any("Tesla" in result for result in process("Tesla"))
+    assert any("electric vehicle" in result for result in process("Tesla"))
+
+def test_knows_about_kant():
+    assert any("German philosopher" in result for result in process("Kant"))
+
+def test_knows_about_kia():
+    assert any("automaker" in result for result in process("Kia"))
