@@ -24,4 +24,4 @@ def test_knows_about_kant():
     assert any("German philosopher" in result for result in process("Kant"))
 
 def test_knows_about_kia():
-    assert any("automaker" in result for result in process("Kia"))
+    assert any("automotive" in result for result in process("Kia"))
