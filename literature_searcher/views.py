@@ -33,6 +33,9 @@ def index():
 def process_query():
     if query := request.form["search_query"]:
         search_results = query_processor.process(query)
+        print("response : ",search_results)
+        if search_results == []:
+            search_results = ['No information corresponding to this input']
         response_type = request.form["response_type"]
         if response_type == "HTML":
             return render_template("search_results.html", search_results=search_results)

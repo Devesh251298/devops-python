@@ -2,11 +2,9 @@ import os
 
 from flask import Flask, render_template, request, flash
 
-
 def create_app(test_config=None):
     # create and configure the app
     app = Flask(__name__)
-
     if test_config is None:
         app.config.from_pyfile("config.py", silent=True)
     else:
@@ -20,4 +18,5 @@ def create_app(test_config=None):
 
 if __name__ == '__main__':
     app = create_app()
+    
     app.run(host='0.0.0.0')
